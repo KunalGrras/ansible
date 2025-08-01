@@ -1,5 +1,8 @@
 ---
  - name: Install httpd
-   yum:
-     name: httpd
-     state: present
+   hosts: all
+   become: true
+   tasks:
+     - yum:
+        name: httpd
+        state: present
